@@ -1,7 +1,6 @@
-import "./App.css";
 import { useState, useEffect } from "react";
 import { getMonth } from "date-fns";
-
+import "./styles.css";
 const meses = [
 	{ id: 1, nomeMes: "Janeiro", dias: 31 },
 	{ id: 2, nomeMes: "Fevereiro", dias: 28 },
@@ -14,17 +13,33 @@ const meses = [
 	{ id: 9, nomeMes: "Setembro", dias: 30 },
 	{ id: 10, nomeMes: "Outubro", dias: 31 },
 	{ id: 11, nomeMes: "Novembro", dias: 30 },
-	{ id: 12, nomeMes: "Dezebro", dias: 31 },
+	{ id: 12, nomeMes: "Dezembro", dias: 31 },
 ];
 
 function App() {
-	let [mes, setMes] = useState(meses[0]);
-
+	let [mes, setMes] = useState([{}]);
+	let [dias, setDias] = useState([]);
+	let cu = [];
+	console.log(dias);
 	console.log(mes.dias);
+
+	let handleMes = () => {
+		setMes(meses[11]);
+		handleDias();
+	};
+
+	let handleDias = () => {
+		for (let i = 1; i <= mes.dias; i++) {
+			cu.push(i);
+			setDias(cu);
+			console.log(cu);
+		}
+	};
 
 	useEffect(() => {
 		return () => {
-			setMes(meses[getMonth(new Date())]);
+			handleMes();
+			handleDias();
 		};
 	}, []);
 
@@ -41,6 +56,11 @@ function App() {
 						<p>Sex</p>
 						<p>Sab</p>
 						<p>Dom</p>
+					</div>
+					<div className="days">
+						{dias.map((dia) => (
+							<div className="day">{dia}</div>
+						))}
 					</div>
 				</div>
 			</div>

@@ -1,20 +1,21 @@
 import express from 'express';
-
-// const app = express();
-
-// app.listen(3009, () => 
-// console.log('Servidor iniciado na porta 3000')
-// );
-
-
-import mysql from "mysql"
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "god",
-    password: ""
+import mysql from "my-sql"
+const app = new express();
+import nodemon from 'nodemon';
+const con = mysql.createConnection({
+    host: 'localhost',
+    user: "root",
+    password:"",
+    database: "pinto"
 })
 
-con.connect(function(err){
-    if (err) throw err;
-    console.log("Connected!")
+app.listen(3001, () => 
+console.log('Servidor iniciado na porta 3000')
+);
+
+app.get('/',(req, res) => {
+    con.query('Select * FROM clientes', (err, result) =>{
+        res.send(result)
+    })
 })
+

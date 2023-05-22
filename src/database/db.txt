@@ -1,0 +1,32 @@
+obviously not a database
+
+use projeto_pw;
+create table conta(id_conta int auto_increment primary key,
+					nome varchar(50) not null,
+                    data_nasc date not null,
+                    email varchar(50) not null
+                    );
+                    
+                    
+create table categoria(id_categoria int auto_increment primary key,
+			nome_categoria varchar(50)not null);
+
+
+
+create table tarefas(id_tarefas int auto_increment primary key,
+					nome_tarefa varchar(50) not null,
+                    data datetime not null,
+                    id_conta int not null,
+                    id_categoria int not null,
+                    foreign key (id_conta) references conta(id_conta),
+                    foreign key (id_categoria) references categoria(id_categoria));
+                    
+
+
+insert into conta (nome, data_nasc, senha, email) values ("Victoria Izmailov",
+													'2004-03-16',
+                                                    'guidomista',
+                                                    'victtake@gmail.com');
+
+
+

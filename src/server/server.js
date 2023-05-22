@@ -1,21 +1,23 @@
-import express from 'express';
-import mysql from "my-sql"
+import express from "express";
+
 const app = new express();
-import nodemon from 'nodemon';
-const con = mysql.createConnection({
-    host: 'localhost',
-    user: "root",
-    password:"",
-    database: "pinto"
-})
 
-app.listen(3001, () => 
-console.log('Servidor iniciado na porta 3000')
-);
+app.listen(3006, () => console.log("Servidor iniciado na porta 3006"));
 
-app.get('/',(req, res) => {
-    con.query('Select * FROM clientes', (err, result) =>{
-        res.send(result)
-    })
-})
+import mysql from "mysql";
+var connection = mysql.createConnection({
+	host: "localhost",
+	user: "root",
+	password: "",
+	database: "projeto_pw",
+});
 
+connection.connect();
+
+connection.query("SELECT * FROM CONTA", (err, rows, fields) => {
+	if (err) throw err;
+
+	console.log("The soluction is: ", rows[0]);
+});
+
+connection.end();

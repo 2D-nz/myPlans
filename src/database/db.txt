@@ -1,13 +1,18 @@
-obviously not a database
+create schema projeto_pw;
 
 use projeto_pw;
 create table conta(id_conta int auto_increment primary key,
 					nome varchar(50) not null,
                     data_nasc date not null,
-                    email varchar(50) not null
+                    email varchar(50) not null,
+                    senha varchar(50) not null
                     );
                     
                     
+drop table conta;
+drop table categoria;
+drop table tarefas;
+
 create table categoria(id_categoria int auto_increment primary key,
 			nome_categoria varchar(50)not null);
 
@@ -27,6 +32,6 @@ insert into conta (nome, data_nasc, senha, email) values ("Victoria Izmailov",
 													'2004-03-16',
                                                     'guidomista',
                                                     'victtake@gmail.com');
-
-
-
+                                                    
+                                                    
+select * from conta;

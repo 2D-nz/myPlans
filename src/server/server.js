@@ -66,7 +66,7 @@ app.get("/categoria", (req, res) => {
 		nome_categoria: req.body.nome_categoria,
 	};
 	connection.query(
-		`SELECT * FROM CAREGORIA WHERE id_conta = ${categoria.id_conta}`
+		`SELECT * FROM CATEGORIA WHERE id_conta = ${categoria.id_conta}`
 	),
 		(err, rows) => {
 			if (err) throw err;
@@ -149,18 +149,23 @@ app.post("/cadastrar/categoria", (req, res) => {
 });
 
 app.post("/cadastrar/tarefa", (req, res) => {
-	const categoria = {
+	const tarefa = {
 		id_conta: req.body.id_conta,
 		id_categoria: req.body.id_categoria,
 		nome_tarefa: req.body.nome_tarefa,
 		data: req.body.data,
 	};
+
+	// INSERT INTO tarefa (Faculdade, data_tarefa, id_conta, id_categoria, completo) VALUES (${tarefa.nome_tarefa}, ${dataFormatada}, ${tarefa.id_conta}, ${tarefa.id_categoria}, false)
+
+	const dataFormatada = formatData(tarefa.data);
 	connection.query(
-		`INSERT INTO TAREFA (nome_categoria, id_conta) VALUES (${categoria.nome_categoria}, ${categoria.id_conta})`
+		`INSERT INTO tarefa (tarefa_nome, data_tarefa, id_conta, id_categoria, completo) VALUES ("${tarefa.nome_tarefa}", '${dataFormatada}', ${tarefa.id_conta}, ${tarefa.id_categoria}, false)`
 	),
 		(err) => {
 			if (err) res.send(err);
 			else {
+				console.log("Categoria Adicionada");
 				res.send("Categoria adicionada");
 			}
 		};

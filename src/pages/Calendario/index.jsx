@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { getMonth } from "date-fns";
-import "./styles.css";
 const meses = [
 	{ id: 1, nomeMes: "Janeiro", dias: 31 },
 	{ id: 2, nomeMes: "Fevereiro", dias: 28 },
@@ -20,8 +19,6 @@ function App() {
 	let [mes, setMes] = useState([{}]);
 	let [dias, setDias] = useState([]);
 	let cu = [];
-	console.log(dias);
-	console.log(mes.dias);
 
 	let handleMes = () => {
 		setMes(meses[11]);

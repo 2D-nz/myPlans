@@ -15,7 +15,7 @@ const meses = [
 	{ id: 12, nomeMes: "Dezembro", dias: 31 },
 ];
 
-function App() {
+function Calendario() {
 	let [mes, setMes] = useState([{}]);
 	let [dias, setDias] = useState([]);
 	let cu = [];
@@ -65,4 +65,4 @@ function App() {
 	);
 }
 
-export default App;
+export default Calendario;

@@ -1,417 +1,91 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500&display=swap");
-
-* {
-	margin: 0;
-	padding: 0;
-}
-
-.TelaLogin {
-	margin: 10%;
-	display: flex;
+.div_container_login-registro {
 	align-items: center;
-	justify-content: space-between;
+	border-radius: 10px;
+	background-color: #f1efef;
+	margin-top: 10%;
+	transition: all ease-in 1.5s;
 }
 
-body {
-	height: 100vh;
+.div_container_login-registro > span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 1.5rem;
+	gap: 1rem;
+}
+.div_container_login-registro > span p {
+	color: #5e548e;
+	margin: 0px 1rem;
+}
+.div_container_login-registro > span p:hover {
+	color: #24025e;
+}
+
+.div_form_login {
+	margin: 1.5rem;
+	padding: 5px 0.5rem;
+}
+
+.div_container_login-registro input {
+	width: 90%;
+	padding: 10px;
+	border-radius: 15px;
 	background-color: #9f86c0;
+	border: 0px;
+	outline: none;
+	caret-color: transparent;
+	transition: all ease-in 0.25s;
+}
+.div_container_login-registro input:focus {
+	background-color: #7734eb;
 }
 
-.login {
-	background-color: #d9d9d9;
-	position: absolute;
-	width: 528px;
-	height: 592px;
-	left: 386px;
-	top: 60px;
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
 
-.login_entrar {
-	position: absolute;
-	left: 4.55%;
-	right: 54.17%;
-	top: 5.74%;
-	bottom: 84.46%;
-	color: #5e548e;
-	font-family: "Lexend Deca", sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	text-align: center;
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+#span_esqueceu-senha {
+	display: flex;
+	justify-content: right;
+	width: 100%;
+	color: red;
+	font-size: 10px;
+	margin-bottom: 1rem;
 }
 
-.login_criarconta {
-	position: absolute;
-	left: 45.83%;
-	right: 12.88%;
-	top: 5.74%;
-	bottom: 84.46%;
-	color: #231942;
-	font-family: "Lexend Deca", sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	text-align: center;
-}
-
-.login_emailtelefone {
-	position: absolute;
-	left: 8.52%;
-	right: 42.8%;
-	top: 25.68%;
-	bottom: 66.72%;
-	color: #000000;
-	font-family: "Lexend Deca", sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-}
-
-.login_rectangle_email {
-	background-color: #5e548e;
-	position: absolute;
-	left: 8.52%;
-	right: 8.52%;
-	top: 33.28%;
-	bottom: 56.25%;
-	border-radius: 25px;
-}
-
-.login_senha {
-	position: absolute;
-	left: 8.52%;
-	right: 42.8%;
-	top: 46.28%;
-	bottom: 46.11%;
-	font-family: "Lexend Deca", sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	color: #000000;
-}
-
-.login_rectangle_senha {
-	position: absolute;
-	left: 8.52%;
-	right: 8.52%;
-	top: 53.89%;
-	bottom: 35.64%;
-	background: #5e548e;
-	border-radius: 25px;
-}
-
-.login_esqueceuasenha {
-	position: absolute;
-	left: 42.23%;
-	right: 9.47%;
-	top: 66.89%;
-	bottom: 28.72%;
-	font-family: "Lexend Deca", sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	color: #000000;
-}
-
-.login_retangle_cliquepentrar {
-	position: absolute;
-	left: 8.52%;
-	right: 8.52%;
-	top: 79.05%;
-	bottom: 10.47%;
-	background: #9f86c0;
-	border-radius: 25px;
-}
-
-.login_cliquepentrar {
-	position: absolute;
-	left: 28.79%;
-	right: 28.98%;
-	top: 81.42%;
-	bottom: 13.34%;
-	font-family: "Lexend Deca", sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	color: #ffffff;
-}
-
-.TelaRegistro {
-	background-color: #d9d9d9;
-	position: absolute;
-	width: 1000px;
-	height: 672px;
-	left: 250px;
-	top: 60px;
-}
-
-.registre-se_entrar {
-	position: absolute;
-	left: 25.7%;
-	right: 52.5%;
-	top: 4.02%;
-	bottom: 87.35%;
-	font-family: "Lexend Deca";
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	text-align: center;
-	color: #5e548e;
-}
-
-.registre-se_criarConta {
-	position: absolute;
-	left: 47.4%;
-	right: 30.8%;
-	top: 4.02%;
-	bottom: 87.35%;
-	font-family: "Lexend Deca";
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	text-align: center;
-	color: #5e548e;
-}
-
-.registre-se_email {
-	position: absolute;
-	left: 0.5%;
-	right: 86.4%;
-	top: 15.03%;
-	bottom: 80.51%;
-	font-family: "Lexend Deca", sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	text-align: center;
-	color: #000000;
-}
-
-.registre-se_email_rectangle {
-	position: absolute;
-	left: 3.2%;
-	right: 52.5%;
-	top: 21.28%;
-	bottom: 70.98%;
-	background: #9f86c0;
+.div_container_login-registro button {
+	width: 100%;
+	color: white;
+	outline: none;
+	border: none;
 	border-radius: 15px;
+	padding: 15px;
+	background-color: #231942;
+	transition: all ease-in 0.1s;
 }
 
-.registre-se_criarConta_nomeCompleto {
-	position: absolute;
-	left: 2.8%;
-	right: 77.4%;
-	top: 31.99%;
-	bottom: 62.35%;
-	font-family: "Lexend Deca", sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	text-align: center;
-	color: #000000;
+.div_container_login-registro button:hover {
+	background-color: #48338a;
 }
 
-.registre-se_criarConta_nomeCompleto_rectangle {
-	position: absolute;
-	left: 3.2%;
-	right: 52.6%;
-	top: 38.1%;
-	bottom: 54.17%;
-	background: #9f86c0;
-	border-radius: 15px;
+.div_form_registro {
+	width: 40rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 14px;
 }
 
-.registre-se_criarConta_pais {
-	position: absolute;
-	left: 4.2%;
-	right: 86.5%;
-	top: 50.45%;
-	bottom: 45.98%;
-	font-family: "Lexend Deca", sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	color: #000000;
+#small_input {
+	width: 15%;
+	margin: 0 0.4rem;
 }
-
-.registre-se_criarConta_pais_rectangle {
-	position: absolute;
-	left: 4.2%;
-	right: 87.3%;
-	top: 56.25%;
-	bottom: 36.46%;
-	background: #9f86c0;
-	border-radius: 15px;
-}
-
-.registre-se_criarConta_celular {
-	position: absolute;
-	left: 14.9%;
-	right: 65.3%;
-	top: 50.45%;
-	bottom: 43.9%;
-	font-family: "Lexend Deca", sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	color: #000000;
-}
-
-.registre-se_criarConta_celular_rectangle {
-	position: absolute;
-	left: 14.6%;
-	right: 52.5%;
-	top: 56.25%;
-	bottom: 36.46%;
-	background: #9f86c0;
-	border-radius: 15px;
-}
-
-.registre-se_criarConta_nascimento {
-	position: absolute;
-	left: 50.2%;
-	right: 23.3%;
-	top: 15.03%;
-	bottom: 80.51%;
-	font-family: "Lexend Deca";
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	text-align: center;
-	color: #000000;
-}
-
-.registre-se_criarConta_nascimento_rectangle_dia {
-	position: absolute;
-	left: 51.1%;
-	right: 40%;
-	top: 21.28%;
-	bottom: 70.98%;
-	background: #9f86c0;
-	border-radius: 15px;
-}
-
-.registre-se_criarConta_nascimento_rectangle_mes {
-	position: absolute;
-	left: 63.4%;
-	right: 27.8%;
-	top: 21.28%;
-	bottom: 70.98%;
-	background: #9f86c0;
-	opacity: 0.89;
-	border-radius: 15px;
-}
-
-.registre-se_criarConta_nascimento_rectangle_ano {
-	position: absolute;
-	left: 76%;
-	right: 5.2%;
-	top: 21.28%;
-	bottom: 70.98%;
-	background: #9f86c0;
-	border-radius: 15px;
-}
-
-.registre-se_criarConta_senha {
-	position: absolute;
-	left: 51.1%;
-	right: 37.3%;
-	top: 31.55%;
-	bottom: 64.29%;
-	font-family: "Lexend Deca";
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	color: #000000;
-}
-
-.registre-se_criarConta_senha_rectangle {
-	position: absolute;
-	left: 51.1%;
-	right: 5.2%;
-	top: 38.1%;
-	bottom: 54.17%;
-	background: #9f86c0;
-	border-radius: 15px;
-}
-
-.registre-se_criarConta_repetirSenha {
-	position: absolute;
-	left: 50.8%;
-	right: 30.8%;
-	top: 50.15%;
-	bottom: 45.98%;
-	font-family: "Lexend Deca";
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	color: #000000;
-}
-
-.registre-se_criarConta_repetirSenha_rectangle {
-	position: absolute;
-	left: 51.1%;
-	right: 5.2%;
-	top: 56.25%;
-	bottom: 36.46%;
-	background: #9f86c0;
-	border-radius: 15px;
-}
-
-.registre-se_criarConta_registre-se_rectangle {
-	position: absolute;
-	left: 68.2%;
-	right: 5.2%;
-	top: 85.86%;
-	bottom: 4.76%;
-	background: #231942;
-	border-radius: 15px;
-}
-
-.registre-se_criarConta_registre-se {
-	position: absolute;
-	left: 73.8%;
-	right: 10.9%;
-	top: 88.24%;
-	bottom: 7.29%;
-	font-family: "Lexend Deca";
-	font-style: normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	text-align: center;
-	color: #ffffff;
-}
-
-.tela_inicio1 {
-	position: absolute;
-	width: 1000px;
-	height: 672px;
-	left: 250px;
-	top: 60px;
-	background: #5e548e;
-}
-
-.inicio1_sidebar {
-	position: absolute;
-	width: 148.03px;
-	height: 671.52px;
-	left: 0.43px;
-	top: 3.77px;
-	background-color: #d9d9d9;
+.div_form_registro button {
+	margin-top: 2.5rem;
 }

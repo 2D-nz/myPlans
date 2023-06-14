@@ -1,0 +1,25 @@
+.div_home_container {
+	border-radius: 10px;
+	text-align: center;
+	background-color: #f1efef;
+	margin: 1rem 25%;
+}
+.home_button {
+	background-color: #654ed7;
+	border: none;
+	padding: 20px;
+	width: 80%;
+	margin: 10px;
+	border-radius: 10px;
+	color: black;
+	font-size: 15px;
+	font-weight: bold;
+	transition: all ease-in 0.15s;
+}
+.home_button:hover {
+	background-color: #937efa;
+}
+
+.div_home_container > div {
+	padding: 25px 40px;
+}

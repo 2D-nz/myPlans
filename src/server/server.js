@@ -29,10 +29,11 @@ app.use(
 
 // setting up mysql connection with express
 var connection = mysql.createConnection({
-	host: "localhost",
+	host: "127.0.0.1",
 	user: "root",
 	password: "",
 	database: "projeto_pw",
+	port: "3006",
 });
 
 // test script
@@ -50,14 +51,11 @@ app.get("/conta", (req, res) => {
 		email: req.body.email,
 	};
 
-	connection.query(
-		`SELECT * FROM CONTA where email = "${conta.email}"`,
-		(err, rows) => {
-			if (err) throw err;
+	connection.query(`SELECT * FROM CONTA`, (err, rows) => {
+		if (err) throw err;
 
-			res.send(rows);
-		}
-	);
+		res.send({ data: rows[0], body: req.body });
+	});
 });
 
 app.get("/categoria", (req, res) => {
@@ -75,34 +73,32 @@ app.get("/categoria", (req, res) => {
 		};
 });
 
-app.get("/login", (req, res) => {
+app.post("/login", (req, res) => {
 	const user = req.body.email;
 	const senha = req.body.senha;
-
 	connection.query(
-		"SELECT * FROM conta WHERE email = ?;",
+		"SELECT * FROM conta WHERE email = ?",
 		user,
 		(err, result) => {
 			if (err) {
 				res.send({ err: err });
 			}
-
-			if (result.length > 0) {
-				bcrypt.compare(senha, result[0].senha, (err, response) => {
-					if (response) {
-						res.send({
-							response,
-						});
-					} else {
-						res.send({
-							message: "Usuário ou senha errados",
-						});
-					}
-				});
-			} else {
-				res.send({
-					message: "Usuário inexistente, cadastre-se!",
-				});
+			if (result) {
+				if (result.length > 0) {
+					bcrypt.compare(senha, result[0].senha, (err, response) => {
+						if (response) {
+							res.send(response);
+						} else {
+							res.send({
+								message: "Usuário ou senha errados",
+							});
+						}
+					});
+				} else {
+					res.send({
+						message: "Usuário inexistente, cadastre-se!",
+					});
+				}
 			}
 		}
 	);

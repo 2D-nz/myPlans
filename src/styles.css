@@ -1,10 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend&display=swap");
-.greeting {
-	color: red;
-	justify-content: center;
-	margin: 0;
-}
-
 .app {
-	font-family: "Lexend", sans-serif;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
